@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decryptor 2.0", "Decryptor 2.0.csproj", "{24912BE3-FDCB-4C67-AA28-D9DC189E1427}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decryptor 2.0.Tests", "..\Decryptor 2.0.Tests\Decryptor 2.0.Tests.csproj", "{98317749-42BD-428D-8E43-B446529F0393}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24912BE3-FDCB-4C67-AA28-D9DC189E1427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24912BE3-FDCB-4C67-AA28-D9DC189E1427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24912BE3-FDCB-4C67-AA28-D9DC189E1427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24912BE3-FDCB-4C67-AA28-D9DC189E1427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98317749-42BD-428D-8E43-B446529F0393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98317749-42BD-428D-8E43-B446529F0393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98317749-42BD-428D-8E43-B446529F0393}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98317749-42BD-428D-8E43-B446529F0393}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5E7D484-7C39-40DF-8E26-145DF4CF5868}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,41 @@
+﻿@using Decryptor.Models
+
+@{
+    ViewBag.Title = "Результат";
+}
+@if (Processor.PathToInputFile == "")
+{
+     <h3>Шаг 3. Получите результат</h3>
+}
+else
+{
+    <h3>Шаг 4. Получите результат</h3>
+}
+@using (Html.BeginForm("DoOperation", "Process", FormMethod.Post))
+{
+    <div class="jumbotron">
+        <div align="center">
+            @Html.TextArea("inputText", Processor.InputText, new { @style = "width:90%", @rows = "14" })
+        </div>
+    </div>
+    <div align="left">
+        <h3>
+            Скачать файлы:
+            <i>&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;</i>
+            @foreach (var item in ViewData.Model)
+            { 
+                @Html.ActionLink((string)item, "DownloadFile", new { filename = item });
+                <i>&#8195;||&#8195;</i>
+            }
+        </h3>
+    </div>
+
+}
+@if (Processor.OutputText != "" && Processor.OutputText != null)
+{
+    <div class="jumbotron">
+        <div align="center">
+            @Html.TextArea("outputText", Processor.OutputText, new { @style = "width:90%", @rows = "14" })
+        </div>
+    </div>
+}

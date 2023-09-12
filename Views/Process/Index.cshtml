@@ -1,0 +1,50 @@
+﻿@using Decryptor.Controllers
+@using Decryptor.Models
+@{
+    ViewBag.Title = "Обработка";
+}
+@if (Processor.PathToInputFile == "")
+{
+    if (Processor.CurrentOperation == Operation.Decrypt)
+    {
+        <h3>Шаг 2. Введите текст для расшифровки</h3>
+    }
+    else
+    {
+        <h3>Шаг 2. Введите текст для зашифровки</h3>
+    }
+}
+else
+{
+    <h3>Шаг 3. Проверьте правильность данных и введите ключ</h3>
+}
+@using (Html.BeginForm("DoOperation", "Process", FormMethod.Post))
+{
+    <div class="jumbotron">
+        <div align="center">
+            @Html.TextArea("inputText", Processor.InputText, new { @style = "width:90%", @rows = "14", @placeholder = "Введите сюда ваш текст" })
+        </div>
+    </div>
+    <div align="left">
+        <p style="color:red">@ProcessController.ProcessSystemMessage</p>
+        <h3>Введите ключ: @Html.TextBox("key", Processor.KeyWord, new { @style = "width:80%" }) @ViewBag.Message</h3>
+    </div>
+    if (Processor.CurrentOperation == Operation.Decrypt)
+    {
+        <input type="submit" name="process" value="Расшифровать" class="btn btn-primary btn-lg" />
+    }
+    else
+    {
+        <input type="submit" name="process" value="Зашифровать" class="btn btn-primary btn-lg" />
+        <input type="submit" name="process" value="Сгенерировать ключ" class="btn btn-primary btn-lg" />
+    }
+
+}
+@if (Processor.OutputText != "" && Processor.OutputText != null)
+{
+    <div class="jumbotron">
+        <div align="center">
+            @Html.TextArea("outputText", Processor.OutputText, new { @style = "width:90%", @rows = "14" })
+        </div>
+    </div>
+}

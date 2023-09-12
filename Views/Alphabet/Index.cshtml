@@ -1,0 +1,39 @@
+﻿@using Decryptor.Controllers
+@using Decryptor.Models
+@{
+    ViewBag.Title = "Алфавит шифрования";
+}
+@if (Processor.PathToInputFile != "")
+{
+    <h3>Шаг 2. Сформируйте алфавит шифрования</h3>
+}
+else
+{
+    <h3>Шаг 1. Сформируйте алфавит шифрования</h3>
+}
+@using (Html.BeginForm("FormAlphabet", "Alphabet", FormMethod.Post))
+{
+    <div class="jumbotron">
+        <b>
+            <p>
+                В процессе обработки ваших данных Decryptor.Net будет взаимодействовать с теми символами вашего исходного текста,
+                которые входят в текущий алфавит шифрования. Здесь вы можете указать пакеты символов, которые будут в этот алфавит шифрования
+                включены. Обратите внимание, что для успешного дешифрования вашего сообщения, закодированого с помощью Decryptor.Net алфавиты шифрования
+                в процессе кодирования и декодирования должны быть идентичны. Все символы, не включённые в алфавит шифрования сохранят свои значения и положения
+                в тексте. По умолчанию в шифровании используется Кириллица.
+            </p>
+        </b>
+        <br />
+        <span><h4>@Html.CheckBox("cyrillic", true)Кириллица:<i style="white-space:pre">     абвгдеёжзийклмнопрстуфхцчшщъыьэюя</i></h4></span>
+        <span><h4>@Html.CheckBox("latin", false)Латиница:<i style="white-space:pre">       abcdefghijklmnopqrstuvwxyz</i></h4></span>
+        <span><h4>@Html.CheckBox("numeric", false)Цифры: <i style="white-space:pre">          0123456789</i></h4></span>
+        <span><h4>@Html.CheckBox("punctuation", false)Символы:<i style="white-space:pre">        ! # $ % & ' ( ) * + , - . / : ; < = > ? [ \ ] ^ _` | ~</i></h4></span>
+        <span><h4>@Html.CheckBox("spaces", false)Пробелы:</h4></span>
+        <span><h4>@Html.CheckBox("additional", false)Дополнительные символы: @Html.TextBox("additionalSymbols")</h4></span>
+        <div align="right">
+            <input type="submit" value="Далее" class="btn btn-primary btn-lg"/><br/>
+            @ViewBag.Message
+        </div>
+    </div>
+}
+

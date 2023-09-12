@@ -1,0 +1,29 @@
+﻿@using Decryptor.Controllers
+@using Decryptor.Models
+@{
+    ViewBag.Title = "Загрузка файла";
+}
+
+@using (Html.BeginForm("UploadFile", "Upload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        if (Processor.CurrentOperation == Operation.Decrypt)
+        {
+            <h3>Шаг 1. Выберите файл который требуется расшифровать</h3>
+        }
+        else
+        {
+            <h3>Шаг 1. Выберите файл который требуется зашифровать</h3>
+        }
+        <div class="jumbotron" align="left">
+        <p>
+            Decryptor.Net предоставляет вам возможность работать непосредственно с зашифрованными файлами на вашем компьютере.
+            Просто выберите файл и нажмите "Далее". Обратите внимание, что в данный момент Decryptor.Net осуществляет поддержку 
+            только файлов в форматах .docx и .txt.
+        </p>
+        @Html.TextBox("file", "", new { type = "file" }) <br />
+        <div align="right">
+            <i style="color:red">@ViewBag.Message</i>
+            <input type="submit" value="Далее" class="btn btn-primary btn-lg" />
+        </div>
+    </div>
+}
