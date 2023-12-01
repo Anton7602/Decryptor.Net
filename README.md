@@ -11,5 +11,3 @@ During the encryption/decryption process, the case of the text is preserved. If 
 The output of any encryption algorithm in the program is displayed in the corresponding field, and users are also provided with the option to download the result in .txt and .docx formats. By default, both input and output files are stored in the App_Data folder, but the contents of this folder are cleared before new files are generated for download.
 
 The program's functionality is covered by unit tests using the built-in Visual Studio toolkit.
-
-I hope this summary accurately describes the Decryptor.Net project based on the provided ReadMe file. Let me know if you have any further questions!
