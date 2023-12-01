@@ -1,4 +1,4 @@
-#  Decryptor.Net
+# Decryptor.NET
 
 Decryptor.Net is a web application built on the ASP.Net MVC5 technology stack. It allows for the encryption and decryption of text files using the Vigenere algorithm. The application features an interactive interface designed to provide a convenient and comfortable user experience.
 
