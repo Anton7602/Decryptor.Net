@@ -1,23 +1,15 @@
-Decryptor.Net
+#Decryptor.Net
 
-Программа Decryptor.Net представляет из себя веб приложение выполненное на базе стека технологий ASP.Net MVC5 позволяющее осуществлять шифрование/
-дешифрование текстовых фаилов по алгоритму Виженера. Реализован интерактивный интерфейс нацеленный на обеспечение удобной и комфортной работы с пользователем.
+Decryptor.Net is a web application built on the ASP.Net MVC5 technology stack. It allows for the encryption and decryption of text files using the Vigenere algorithm. The application features an interactive interface designed to provide a convenient and comfortable user experience.
 
-Decryptor.Net позволяет осуществить ввод текса вручную (или скопировав его из буфера обмена) во вкладках "Зашифровать текст" и "Расшифровать текст", или
-загрузить текстовые фаилы в форматах .txt и .docx во вкладках "Зашифровать файл" и "Расшифровать файл".
+With Decryptor.Net, users can manually enter text or copy it from the clipboard in the "Encrypt Text" and "Decrypt Text" tabs. Alternatively, they can upload text files in .txt and .docx formats in the "Encrypt File" and "Decrypt File" tabs.
 
-Реализована возможность изменять алфавит шифрования. Пользователь может подключать один или несколько предустановленных пакетов символов, или, при необходимости -
-ввести свой. Алфавит шифрования проверяется на наличие повторяющихся символов - все символы в алфавите шифрования должны встречаться один раз. 
-Формально, программа позволяет выбрать пустой алфавит шифрования, однако в таком случае пользователь будет остановлен предупреждением о некорректности ввода ключа
-(ключ может состоять только из символов алфавита шифрования, а если он пустой, то никакой непустой ключ не сможет пройти проверку.)
+The application also provides the ability to customize the encryption alphabet. Users can choose from pre-defined character sets or create their own. The encryption alphabet is checked for duplicate characters, and all characters in the alphabet must be unique. While it is technically possible to select an empty encryption alphabet, the user will be warned about the incorrect input of the key (the key can only consist of characters from the encryption alphabet, and if it is empty, no non-empty key will pass the validation).
 
-В процессе шифрования/дешифрования учитывался регистр текста. То есть если файл имел заглавные буквы, то они останутся заглавными на выходе.
-Ключ не зависит от регистра. Ключи "Скорпион" и "скорпион" являются эквивалентыми.
+During the encryption/decryption process, the case of the text is preserved. If the input file contains uppercase letters, they will remain uppercase in the output. However, the key is case-insensitive. The keys "Scorpion" and "scorpion" are considered equivalent.
 
-Результатом работы любого алгоритма программы является вывод получившегося в результате операции текста в соответствующее поле, а так-же предложение скачать
-фаилы с результатом в форматах .txt и .docx. По умолчанию и входные и выходные фаилы хранятся в папке App_Data, однако перед выводом новых фаилов для скачивания
-содержимое этой папки очищается.
+The output of any encryption algorithm in the program is displayed in the corresponding field, and users are also provided with the option to download the result in .txt and .docx formats. By default, both input and output files are stored in the App_Data folder, but the contents of this folder are cleared before new files are generated for download.
 
-Функционал программы покрыт Unit Test'ами с помощью встроенного инструментария VisualStudio.
+The program's functionality is covered by unit tests using the built-in Visual Studio toolkit.
 
-Программу выполнил Коваленко Антон. Университет ИТМО 2019 год.
+I hope this summary accurately describes the Decryptor.Net project based on the provided ReadMe file. Let me know if you have any further questions!
